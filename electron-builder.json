@@ -1,0 +1,14 @@
+{
+  "appId": "com.example.amt-commander",
+  "productName": "AMT Commander",
+  "files": [
+    "main.js",
+    "dist/amtcommander"
+  ],
+  "win": {
+    "icon": "src/icon.ico"
+  },
+  "linux": {
+    "icon": "src/icon.png"
+  }
+}
