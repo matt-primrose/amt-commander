@@ -17,13 +17,13 @@ describe('AppComponent', () => {
   it(`should have as title 'AMTCommander'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('AMTCommander');
+    expect(app.title).toEqual('AMT Commander');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('AMTCommander app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('AMT Commander app is running!');
   });
 });
