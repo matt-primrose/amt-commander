@@ -26,11 +26,12 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/icon.ico",
+              "src/assets/icon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/amt-commander-theme.scss"
             ],
             "scripts": []
           },
