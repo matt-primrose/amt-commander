@@ -1,0 +1,12 @@
+// Import material theming functions
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$amt-commander-primary: mat.define-palette(mat.$light-blue-palette);
+$amt-commander-accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$amt-commander-warn: mat.define-palette(mat.$red-palette);
