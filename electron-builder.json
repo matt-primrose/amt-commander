@@ -6,9 +6,9 @@
     "dist/amtcommander"
   ],
   "win": {
-    "icon": "src/icon.ico"
+    "icon": "src/assets/icon.ico"
   },
   "linux": {
-    "icon": "src/icon.png"
+    "icon": "src/assets/icon.png"
   }
 }
