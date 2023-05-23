@@ -8,13 +8,20 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatListModule } from '@angular/material/list'
 import { MatIconModule } from '@angular/material/icon'
 import { ToolbarComponent } from './core/toolbar/toolbar.component'
-import { NavbarComponent } from './core/navbar/navbar.component'
+import { NavbarComponent } from './core/navbar/navbar.component';
+import { DevicesComponent } from './devices/devices.component';
+import { ProfilesComponent } from './profiles/profiles.component';
+import { AddDeviceComponent } from './devices/add-device/add-device.component'
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    NavbarComponent
+    NavbarComponent,
+    DevicesComponent,
+    ProfilesComponent,
+    AddDeviceComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +30,8 @@ import { NavbarComponent } from './core/navbar/navbar.component'
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
