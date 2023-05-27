@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
@@ -10,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { ToolbarComponent } from './core/toolbar/toolbar.component'
 import { NavbarComponent } from './core/navbar/navbar.component';
 import { ProfilesComponent } from './profiles/profiles.component';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatSelectModule } from '@angular/material/select'
 import { CommonModule } from '@angular/common'

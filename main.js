@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 const { app, BrowserWindow } = require('electron')
 const { spawn } = require('child_process')
 
@@ -23,7 +28,7 @@ function createWindow () {
   win.loadFile('dist/amtcommander/index.html')
 
   // Open the DevTools.
-  // win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // Remove menu bar
   win.removeMenu()

@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');

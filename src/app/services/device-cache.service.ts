@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs'

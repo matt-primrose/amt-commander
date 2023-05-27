@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { DeviceCacheService } from './device-cache.service';
