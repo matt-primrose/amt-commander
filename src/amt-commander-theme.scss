@@ -134,5 +134,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   text-transform: none;
   white-space: nowrap;
   word-wrap: normal;
+  -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
 }

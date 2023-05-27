@@ -1,0 +1,16 @@
+{
+  "devices": [
+    {
+      "id": "abcd1234-efgh-5678-ijkl-901234567890",
+      "name": "test",
+      "hostname": "localhost",
+      "auth": "digest-none"
+    },
+    {
+      "id": "1f64f0d0-4eb7-4153-9b5a-95bf8c07e7c2",
+      "name": "test",
+      "hostname": "test",
+      "auth": "digest-none"
+    }
+  ]
+}
