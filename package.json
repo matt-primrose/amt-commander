@@ -1,6 +1,6 @@
 {
   "name": "amt-commander",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "main.js",
   "description": "AMT Commander is a standalone device management console for interacting with Intel Active Management Technology (AMT) devices over the local network",
   "author": {
