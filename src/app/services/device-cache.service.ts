@@ -20,16 +20,21 @@ export class DeviceCacheService {
   }
 
   private devicesSub = new Subject()
+  private countSub = new Subject()
 
   watchDevices(): Observable<any> {
     return this.devicesSub.asObservable()
+  }
+
+  watchCount(): Observable<any> {
+    return this.countSub.asObservable()
   }
 
   getDevices(): Observable<Device[]> {
     return this.http.get<Device[]>(DEVICES_API)
   }
 
-  addDevice(device: Device): any {
+  addDevice(device: Device) {
     this.http.post(DEVICES_API, device, HTTP_OPTIONS).subscribe(
       response => {
         console.log('Data added successfully:', response)
@@ -42,7 +47,7 @@ export class DeviceCacheService {
     )
   }
 
-  removeDevice(deviceId: string): any {
+  removeDevice(deviceId: string) {
     this.getDevices().subscribe((data: Device[]) => {
       for (let x = 0; x < data.length; x++) {
         if (data[x].id === deviceId)
@@ -58,15 +63,6 @@ export class DeviceCacheService {
           )
       }
     })
-  }
-
-  count(): number {
-    const devices = this.http.get<Device[]>(DEVICES_API)
-    let total = 0
-    devices.forEach(value => {
-      total++
-    })
-    return total
   }
 }
 
