@@ -1,15 +1,32 @@
+<mat-toolbar><span>Add New Device</span></mat-toolbar>
+<form [formGroup]="options">
+  <mat-form-field appearance="fill">
+    <mat-label>Friendly Name</mat-label>
+    <input matInput [(ngModel)]="data.name" [ngModelOptions]="{standalone: true}" placeholder="My Device">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Hostname</mat-label>
+    <input matInput [(ngModel)]="data.hostname" [ngModelOptions]="{standalone: true}" placeholder="IP Address or FQDN" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Auth / Security</mat-label>
+    <mat-select [(ngModel)]="data.auth" [ngModelOptions]="{standalone: true}" placeholder="Select" required>
+      <mat-option value="digest-none">Digest / None</mat-option>
+      <mat-option value="digest-tls">Digest / TLS</mat-option>
+      <mat-option value="kerberos-none">Kerberos / None</mat-option>
+      <mat-option value="kerberos-tls">Kerberos / TLS</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
 <mat-toolbar>
-  <div class="header">
-    <span>Add New Device</span>
-  </div>
-</mat-toolbar>
-<div class="footer">
-  <button mat-button (click)="addDevice()">
+  <button mat-button [mat-dialog-close]="data">
     <mat-icon>add</mat-icon>
     <span>Add Device</span>
   </button>
-  <button mat-button (clear)="closeDialog()">
+  <button mat-button (click)="closeDialog()">
     <mat-icon>clear</mat-icon>
     <span>Cancel</span>
   </button>
-</div>
+</mat-toolbar>

@@ -1,6 +1,6 @@
 {
   "name": "amt-commander",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "main": "main.js",
   "description": "AMT Commander is a standalone device management console for interacting with Intel Active Management Technology (AMT) devices over the local network",
   "author": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "ng": "ng",
+    "json-server": "node server.js --watch db.json",
     "ng-serve": "ng serve",
     "clean": "rimraf dist",
     "prestart": "npm run build",
@@ -35,8 +36,10 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "json-server": "^0.17.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "uuid": "^9.0.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
@@ -45,6 +48,7 @@
     "@angular/compiler-cli": "^16.0.0",
     "@types/angular-material": "^1.1.73",
     "@types/jasmine": "~4.3.0",
+    "@types/uuid": "^9.0.1",
     "electron": "^24.3.1",
     "electron-builder": "^24.4.0",
     "jasmine-core": "~4.6.0",
