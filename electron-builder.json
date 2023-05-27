@@ -5,6 +5,12 @@
     "main.js",
     "dist/amtcommander"
   ],
+  "extraResources": [
+    {
+      "from": "db.json",
+      "to": "resources"
+    }
+  ],
   "win": {
     "icon": "src/assets/icon.ico"
   },
