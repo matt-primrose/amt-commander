@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 import { Component } from '@angular/core'
 import { MatDialog } from '@angular/material/dialog'
 import { AddDeviceComponent } from './add-device/add-device.component'

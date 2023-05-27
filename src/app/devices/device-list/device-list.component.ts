@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 import { Component, OnInit } from '@angular/core'
 import { Device } from '../../models/device'
 import { DeviceCacheService } from '../../services/device-cache.service'

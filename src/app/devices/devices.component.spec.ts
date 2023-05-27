@@ -1,3 +1,8 @@
+/*********************************************************************
+* Copyright (c) Intel Corporation 2023
+* SPDX-License-Identifier: Apache-2.0
+**********************************************************************/
+
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { DevicesComponent } from './devices.component';
 import { AppModule } from '../app.module';
