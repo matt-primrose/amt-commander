@@ -25,6 +25,10 @@ export class DeviceListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.deviceCacheService.connectDevice().then((res: string[]) => {
+      console.log(res)
+    })
+
     this.deviceCacheService.watchDevices().subscribe(() => {
       this.getDevices()
     })

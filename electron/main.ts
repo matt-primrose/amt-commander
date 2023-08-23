@@ -3,9 +3,9 @@
 * SPDX-License-Identifier: Apache-2.0
 **********************************************************************/
 
-const { app, BrowserWindow } = require('electron')
-const { spawn } = require('child_process')
-
+import { app, BrowserWindow, ipcMain  } from 'electron'
+import { spawn } from 'child_process'
+import {join} from 'path'
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win, serverProcess
@@ -16,13 +16,11 @@ function createWindow () {
     width: 1280,
     height: 1024,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: join(__dirname, 'preload.js')
     }
   })
 
-  serverProcess = spawn('node', ['server.js'], {
-    cwd: __dirname,
-  })
 
   // and load the index.html of the app.
   win.loadFile('dist/amtcommander/index.html')
@@ -50,6 +48,12 @@ app.whenReady().then(() => {
   app.on('activate', function() {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+  ipcMain.handle('connectDevice', async (event, arg) => {
+    console.log('got connected device')
+    return new Promise<any>((resolve, reject) => {
+      resolve({connected: true})
+    })
+  })
 })
 
 // Quit when all windows are closed.
@@ -62,9 +66,9 @@ app.on('window-all-closed', () => {
 })
 
 app.on('before-quit', function() {
-  if(serverProcess) {
-    serverProcess.kill()
-  }
+  // if(serverProcess) {
+  //   serverProcess.kill()
+  // }
 })
 
 // app.on('activate', () => {

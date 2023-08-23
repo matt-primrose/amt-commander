@@ -1,7 +1,7 @@
 {
   "name": "amt-commander",
   "version": "0.2.1",
-  "main": "main.js",
+  "main": "electron/dist/main.js",
   "description": "AMT Commander is a standalone device management console for interacting with Intel Active Management Technology (AMT) devices over the local network",
   "author": {
     "name": "Matt C. Primrose"
@@ -13,7 +13,7 @@
     "clean": "rimraf dist",
     "prestart": "npm run build",
     "start": "npm run electron",
-    "electron": "electron .",
+    "electron": "tsc --p electron && electron .",
     "prebuild": "npm run clean",
     "build": "ng build",
     "build:prod": "ng build --configuration=production",
@@ -36,6 +36,7 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@open-amt-cloud-toolkit/wsman-messages": "^5.5.0",
     "json-server": "^0.17.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -47,9 +48,10 @@
     "@angular/cli": "~16.0.2",
     "@angular/compiler-cli": "^16.0.0",
     "@types/angular-material": "^1.1.73",
+    "@types/electron": "^1.6.10",
     "@types/jasmine": "~4.3.4",
     "@types/uuid": "^9.0.1",
-    "electron": "^24.3.1",
+    "electron": "^26.0.0",
     "electron-builder": "^24.4.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",

@@ -7,6 +7,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs'
 import { Device } from '../models/device'
+// import { contextBridge, ipcRenderer  } from 'electron'
 
 const DEVICES_API = 'http://localhost:3000/devices'
 const HTTP_OPTIONS = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) }
@@ -15,13 +16,21 @@ const HTTP_OPTIONS = { headers: new HttpHeaders({ 'Content-Type': 'application/j
   providedIn: 'root'
 })
 export class DeviceCacheService {
+
   constructor(private http: HttpClient) {
-    console.log(this.http)
+    // contextBridge.exposeInMainWorld('electronAPI', {
+    //   connectDevice: (title) => ipcRenderer.send('connectDevice', title)
+    // })
   }
 
   private devicesSub = new Subject()
   private countSub = new Subject()
+  async connectDevice() {
 
+      const result = await (window as any).electronAPI.connectDevice();
+      return result
+
+  }
   watchDevices(): Observable<any> {
     return this.devicesSub.asObservable()
   }

@@ -2,7 +2,7 @@
   "appId": "com.example.amt-commander",
   "productName": "AMT Commander",
   "files": [
-    "main.js",
+    "dist/main.js",
     "dist/amtcommander"
   ],
   "extraResources": [
