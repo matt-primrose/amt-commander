@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.0.2",
-    "@angular/cli": "~16.0.2",
+    "@angular/cli": "~16.2.0",
     "@angular/compiler-cli": "^16.0.0",
     "@types/angular-material": "^1.1.73",
     "@types/electron": "^1.6.10",
