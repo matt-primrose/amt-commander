@@ -5,6 +5,12 @@
       "name": "test",
       "hostname": "localhost",
       "auth": "digest-none"
+    },
+    {
+      "id": "56377a3d-4d8c-4b9b-899e-b69762c7f628",
+      "name": "AMT16",
+      "hostname": "192.168.0.107",
+      "auth": "digest-none"
     }
   ]
 }

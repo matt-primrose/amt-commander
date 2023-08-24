@@ -60,7 +60,10 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "production",
+          "scripts": [
+            "src/app/polyfills/crypto.polyfill.ts"
+          ]
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",

@@ -6,6 +6,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Device } from '../../models/device'
 import { DeviceCacheService } from '../../services/device-cache.service'
+import { MessageHandlerService } from 'src/app/services/message-handler.service'
 
 @Component({
   selector: 'app-device-list',
@@ -17,11 +18,16 @@ export class DeviceListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'hostname', 'auth', 'actions']
 
   constructor(
-    private deviceCacheService: DeviceCacheService
-    ) { }
+    private deviceCacheService: DeviceCacheService,
+    private messageHandlerService: MessageHandlerService
+  ) { }
 
   handleRemove(event: string) {
     this.deviceCacheService.removeDevice(event)
+  }
+
+  handleConnect(event: string) {
+    this.messageHandlerService.connect(event)
   }
 
   ngOnInit(): void {

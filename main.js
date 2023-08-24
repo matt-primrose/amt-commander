@@ -5,10 +5,11 @@
 
 const { app, BrowserWindow } = require('electron')
 const { spawn } = require('child_process')
+const net = require('net')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win, serverProcess
+let win, serverProcess, socket, amtProcess
 
 function createWindow () {
   // Create the browser window.
@@ -21,6 +22,10 @@ function createWindow () {
   })
 
   serverProcess = spawn('node', ['server.js'], {
+    cwd: __dirname,
+  })
+
+  amtProcess = spawn('node', ['index.js'], {
     cwd: __dirname,
   })
 
@@ -40,7 +45,32 @@ function createWindow () {
     // when you should delete the corresponding element.
     win = null
   })
+  ipcMain.on('socket-connect', connectionParams, () => {
+    // Create socket connection
+    socket = new net.Socket();
+
+    // Connect to Intel AMT device
+    socket.connect(connectionParams.port, connectionParams.hostname, () => {
+      console.log('Connected to Intel AMT device');
+    });
+  });
+
+  ipcMain.on('socket-disconnect', () => {
+    if (socket) {
+      socket.end();
+      console.log('Disconnected from Intel AMT device');
+    }
+  });
+
+  ipcMain.on('socket-send', (event, data) => {
+    if (socket) {
+      socket.write(data);
+      console.log('Sent data to Intel AMT device');
+    }
+  });
 }
+
+app.commandLine.appendSwitch('disable-feature', 'OutOfBlinkCors')
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

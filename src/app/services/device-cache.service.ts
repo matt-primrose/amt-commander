@@ -34,6 +34,10 @@ export class DeviceCacheService {
     return this.http.get<Device[]>(DEVICES_API)
   }
 
+  getDevice(deviceId: string): Observable<Device> {
+    return this.http.get<Device>(`${DEVICES_API}/${deviceId}`)
+  }
+
   addDevice(device: Device) {
     this.http.post(DEVICES_API, device, HTTP_OPTIONS).subscribe(
       response => {
