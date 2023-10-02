@@ -51,7 +51,7 @@
     "@types/electron": "^1.6.10",
     "@types/jasmine": "~4.3.4",
     "@types/uuid": "^9.0.1",
-    "electron": "^26.0.0",
+    "electron": "^26.2.4",
     "electron-builder": "^24.4.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
